@@ -2,16 +2,13 @@ package com.bridgelabz.oops;
 
 public class DeckOfCards {
 
-    public static void main(String[] args) {
+    String suit[] = {"Clubs", "Diamonds", "Hearts", "Spades"};
+    String rank[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
+    String players[][] = new String[4][9];
+    String deck[] = new String[52];
 
-        System.out.println("Welcome to Deck of Cards :");
+    public void deckCreate(){
 
-        String suit[] = {"Clubs", "Diamonds", "Hearts", "Spades"};
-        String rank[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
-
-        String players[][] = new String[4][9];
-
-        String deck[] = new String[52];
         int k=0;
 
         for(int i=0; i< suit.length; i++){
@@ -29,7 +26,9 @@ public class DeckOfCards {
 //            System.out.println(deck[m]);
 //        }
 
-//        int shuffle = (int) (Math.random()*52)+1;
+    }
+
+    public void distributeCards() {
 
         for(int i=0; i<4; i++){
 
@@ -50,6 +49,10 @@ public class DeckOfCards {
 
         }
 
+    }
+
+    public void displayCardsOfPlayers() {
+
         for(int i=0; i<4; i++){
             System.out.println("Cards received by Player "+ (i+1) +":");
             for(int j=0; j<9; j++){
@@ -59,6 +62,18 @@ public class DeckOfCards {
             }
 
         }
+
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("Welcome to Deck of Cards :");
+
+        DeckOfCards deckOfCards = new DeckOfCards();
+        deckOfCards.deckCreate();
+        deckOfCards.distributeCards();
+        deckOfCards.displayCardsOfPlayers();
+
 
     }
 
